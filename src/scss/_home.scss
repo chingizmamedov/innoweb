@@ -1,0 +1,66 @@
+.main__h1 {
+    font-size: 60px;
+    line-height: 72px;
+    text-align: center;
+    margin-bottom: 84px;
+}
+
+.btn-link {
+    padding: 13px;
+    background: url(../images/projectbuildbg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-sizing: border-box;
+    display: block;
+    margin: auto;
+    width: 357px;
+    height: 50px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 206px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        &::before {
+            position: absolute;
+            content: url(../images/scope-left-big.svg);
+            top: 0;
+            left: 2px;
+        }
+        &::after {
+            position: absolute;
+            content: url(../images/scope-right-big.svg);
+            top: 0;
+            right: -0;
+        }
+}
+.home-links {
+    margin: auto;
+    display: flex;
+    width: 600px;
+    justify-content: space-around;
+    & a {
+        color: #fff;
+        text-decoration: none;
+        margin: 10px;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: url(../images/scope-left.png);
+            top: -12px;
+            left: -27px;
+        }
+        &::after {
+            position: absolute;
+            content: url(../images/scope-right.png);
+            top: -12px;
+            right: -27px;
+        }
+    }
+}
