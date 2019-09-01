@@ -15,28 +15,49 @@ function Projects({ match, ...props }) {
               props.stepId >=2 ? props.changeStepId(1) : null
             }
           }>
-            <Link to={`${match.url}/`}>1. ТИП ПРОЕКТА</Link>
+            <Link to={`${match.url}`}>1. ТИП ПРОЕКТА</Link>
+            <span style={{
+              fontSize: '13px',
+              lineHeight: '24px',
+              marginTop: '4px'
+            }}>{props.projeType.length !== 0 ? props.projeType[1] : 'НЕ ВЫБРАНО'}</span>
           </li>
           <li className={props.stepId >=2 ? "form-btn__active" : "form-btn"} onClick={() => {
               props.stepId >2 ? props.changeStepId(2) : null
             }
           }>
-            <Link to={`${match.url}/`}>2. Бюджет</Link>
+            <Link to={`${match.url}`}>2. Бюджет</Link>
+            {props.stepId >=2 ? <span style={{
+              fontSize: '13px',
+              lineHeight: '24px',
+              marginTop: '4px'
+            }}>{props.budget.length !== 0 ? 'от ' + props.budget[0] + ', до ' +  props.budget[1] : 'НЕ ВЫБРАНО'}</span> : null }
+            
           </li>
           <li className={props.stepId >=3 ? "form-btn__active" : "form-btn"} onClick={() => {
               props.stepId >3 ? props.changeStepId(3) : null
             }
           }>
-            <Link to={`${match.url}/`}>3. этап проекта</Link>
+            <Link to={`${match.url}`}>3. этап проекта</Link>
+            {props.stepId >=3 ? <span style={{
+              fontSize: '13px',
+              lineHeight: '24px',
+              marginTop: '4px'
+            }}>{props.projectStage.length !== 0 ? props.projectStage : 'НЕ ВЫБРАНО'}</span> : null }
           </li>
           <li className={props.stepId >=4 ? "form-btn__active" : "form-btn"} onClick={() => {
               props.stepId >4 ? props.changeStepId(4) : null
             }
           }>
-            <Link to={`${match.url}/`}>4. когда начинаем</Link>
+            <Link to={`${match.url}`}>4. когда начинаем</Link>
+            {props.stepId >=4 ? <span style={{
+              fontSize: '13px',
+              lineHeight: '24px',
+              marginTop: '4px'
+            }}>{props.startTime.length !== 0 ? props.startTime : 'НЕ ВЫБРАНО'}</span> : null }
           </li>
           <li className={props.stepId == 5 ? "form-btn__active" : "form-btn"}>
-            <Link to={`${match.url}/`}>5. Обратная связь</Link>
+            <Link to={`${match.url}`}>5. Обратная связь</Link>
           </li>
         </ul>
         <ProjectWrapper />    
@@ -46,9 +67,13 @@ function Projects({ match, ...props }) {
 
 
 const matToProps = (store) => {
-
+  console.log(store)
   return {
-    stepId: store.projectReducer.stepId
+    stepId: store.projectReducer.stepId,
+    projeType: store.projectReducer.projectType,
+    budget: store.projectReducer.budget,
+    projectStage: store.projectReducer.projectStage,
+    startTime: store.projectReducer.startTime
   }
 
 }

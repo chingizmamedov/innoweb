@@ -22,10 +22,18 @@ class App extends Component {
     render() {
         return (
             <HashRouter>
-              <Layout />
+              <Layout />    
             </HashRouter>
         )
     }
+}
+
+document.onmousemove = (event) => {
+    const clientX = event.clientX/23 + 'px';
+    const clientY =  event.clientY/23 + 'px';   
+    // console.log('clients' + clientX + ' . ' + clientY);
+
+    document.body.style.backgroundPosition = clientX + ' ' + clientY
 }
 
 const MapState = (state) => {

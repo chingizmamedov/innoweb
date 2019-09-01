@@ -35,27 +35,39 @@ class Project extends React.Component {
     render(){
         if(this.props.stepId == 1) {
             return (
-                <ProjectType />
+                <div className="projects__wraping">
+                    <ProjectType />
+                </div>
+                
             )
         }
         if(this.props.stepId == 2) {
             return (
-                <ProjectBudget />
+                <div className="projects__wraping">
+                    <ProjectBudget />
+                </div>
+                
             )
         }
         if(this.props.stepId == 3) {
             return (
-                <ProjectStage />
+                <div className="projects__wraping">
+                    <ProjectStage />
+                </div>
             )
         }
         if(this.props.stepId == 4) {
             return (
-                <ProjectTime />
+                <div className="projects__wraping">
+                    <ProjectTime />
+                </div>
             )
         }
         if(this.props.stepId == 5) {
             return (
-                <ProjectCallback />
+                <div className="projects__wraping">
+                    <ProjectCallback />
+                </div>
             )
         }
     }

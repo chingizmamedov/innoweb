@@ -5,7 +5,15 @@ import { connect } from 'react-redux';
 function ProjectCallback(props) {
     return (
         <div className="project__big">
-            <span style={{position: 'absolute', top: '0'}} onClick={() => props.changeStepId(1)}>GO back</span>
+            <div className="progress-bar">
+                <div className="progress-bar__item" style={{
+                    background: '#00E5A8',
+                    boxShadow: '0px 1px 10px rgba(0, 229, 168, 0.6)',
+                    width: '100%',
+                    height: '100%'
+                }}></div>
+            </div>
+            <span style={{position: 'absolute', top: '32px', left: '190px'}} onClick={() => props.changeStepId(1)}>НАЗАД</span>
             <div className="project_callback">
                 <form>
                 Меня зовут <input style={{

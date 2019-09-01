@@ -9,7 +9,7 @@
     flex-direction: column;
     padding-left: 41px;
     animation-delay: 5.2s;
-    animation: .6s animationLinks ease-out;
+    animation: .3s animationLinks ease-out;
     &__list {
         position: absolute;
         left: 0;
@@ -48,7 +48,7 @@
 @keyframes animationLinks {
     from {
         opacity: 0;
-        transform: translate(130px)
+        transform: translate(100px)
     }
     to {
         opacity: 1;
