@@ -30,6 +30,10 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },{
+          test: /\.mp3$/,
+          include: path.resolve(__dirname, `${PATH.src}`),
+          loader: 'file-loader'
       },
       {
           test: /\.(png|jpg|svg)$/,

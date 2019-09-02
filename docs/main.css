@@ -362,7 +362,7 @@ body {
   flex-direction: column;
   padding-left: 41px;
   animation-delay: 5.2s;
-  animation: .6s animationLinks ease-out; }
+  animation: .3s animationLinks ease-out; }
   .form-btn__list {
     position: absolute;
     left: 0;
@@ -394,7 +394,7 @@ body {
 @keyframes animationLinks {
   from {
     opacity: 0;
-    transform: translate(130px); }
+    transform: translate(100px); }
   to {
     opacity: 1;
     transform: translate(0); } }
@@ -493,16 +493,37 @@ body {
       right: -27px; }
 
 .project__big {
-  width: 82%;
+  position: relative;
+  width: 100%;
   height: 720px;
-  background-image: url(123.png);
-  background-repeat: no-repeat;
+  background: rgba(5, 32, 56, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   transform-origin: right;
   animation: rotateBig .9s ease-out; }
+  .project__big > span {
+    cursor: pointer; }
+    .project__big > span:before {
+      position: absolute;
+      content: url(arrow.svg);
+      top: 0;
+      left: -100%;
+      transition: .3s; }
+    .project__big > span:hover:before {
+      left: -105%; }
+  .project__big:before {
+    position: absolute;
+    content: url(regi.svg);
+    height: 0;
+    width: 200px;
+    top: 0;
+    left: -73px;
+    height: 100%; }
+
+.projects__wraping {
+  width: 80%; }
 
 .project__type {
   width: 100%;
@@ -531,9 +552,17 @@ body {
   font-size: 20px;
   line-height: 38px; }
 
+.progress-bar {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  top: 0;
+  right: 0; }
+
 @keyframes rotateBig {
   from {
-    transform: rotateY(-30deg) translateX(170px); }
+    transform: rotateY(-5deg) translateX(170px); }
   to {
     transform: rotateY(0deg) translateX(0); } }
 
