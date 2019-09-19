@@ -1,0 +1,42 @@
+.manlist__title {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.manlist__item {
+  font-size: 13px;
+  line-height: 24px;
+  padding: 8px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    color: #00E5A8;
+  }
+  &-active {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      background-image: url(../../images/manactive.png);
+      left: -200px;
+      top: 0;
+      height: 100%;
+      width: 400px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
+.mans__list {
+  width: 460px;
+  overflow: hidden;
+  display: flex;
+}
+
+.mans__item {
+  transition: .4s;
+}

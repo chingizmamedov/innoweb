@@ -11,7 +11,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            music: true
+            music: false
         }
         this.audio = new Audio(Music);
 
@@ -28,7 +28,7 @@ class App extends Component {
     componentWillMount() {
         window.onload = () => {
             this.audio.loop = true;
-            this.audio.play()
+            this.audio
         }
         
 
@@ -37,7 +37,7 @@ class App extends Component {
                 return res.json()
             })
             .then(ans => {
-                console.log('ans',ans)
+                // console.log('ans',ans)
             })
     }
     
