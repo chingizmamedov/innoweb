@@ -10,7 +10,10 @@ import fortyfor from '../pages/404';
 export default class Main extends Component {
     render() {
         return (
-            <div>
+            <div style={{
+                height: '80vh',
+                overflow: 'hidden'
+            }}>
             <Switch>
                 <Route path={'/'} exact component={Home} />
                 <Route path={'/about'} component={About} />

@@ -16,7 +16,10 @@ export default class About extends React.Component {
             front: 0,
             back: 0,
             speak: 0,
-            proje: 0
+            proje: 0,
+            slogan: '',
+            img: '',
+            name: ''
         }
         this.MANS = Mans
         this.changeCurMan = this.changeCurMan.bind(this)
@@ -32,32 +35,27 @@ export default class About extends React.Component {
             countMan: this.MANS.length
         })
 
-        this.changeAbility(this.MANS[this.state.currMan].ability.designe, this.MANS[this.state.currMan].ability.front, this.MANS[this.state.currMan].ability.back, this.MANS[this.state.currMan].ability.speak, this.MANS[this.state.currMan].ability.proje )
+        this.changeAbility(this.MANS[this.state.currMan].name ,this.MANS[this.state.currMan].ability.designe, this.MANS[this.state.currMan].ability.front, this.MANS[this.state.currMan].ability.back, this.MANS[this.state.currMan].ability.speak, this.MANS[this.state.currMan].ability.proje, this.MANS[this.state.currMan].slogan, this.MANS[this.state.currMan].img, this.MANS[this.state.currMan].profession)
 
-        console.log('componentWillMountsss', this.MANS[0].ability.designe)
     }
 
-    componentDidMount() {
-        console.log('componentDidMount', this.state)
-    }
-
-    componentDidUpdate() {
-        console.log('componentDidMount', this.state)
-    }
-
-    changeCurMan(num, designe, front, back, speak, proje) {
+    changeCurMan(num) {
         this.setState({
             currMan: num
         })
     }
 
-    changeAbility(designe, front, back, speak, proje) {
+    changeAbility(name, designe, front, back, speak, proje, img, slogan, profession) {
         this.setState({
+            name: name,
             designe: designe,
             front: front,
             back: back,
             speak: speak,
-            proje: proje
+            proje: proje,
+            slogan: slogan,
+            img: img,
+            profession: profession
         })
     }
     render() {
@@ -68,7 +66,7 @@ export default class About extends React.Component {
             }}>
                 <ManList changeAbility={this.changeAbility} changeCurMan={this.changeCurMan} mans={this.MANS} currMan={this.state.currMan}/>
                 <Svg allStete={this.state} top={this.state.top} />
-                <ManWrap countMan = {this.state.countMan} currMan={this.state.currMan}/>
+                <ManWrap name={this.state.name} countMan = {this.state.countMan} currMan={this.state.currMan} img={this.state.img} slogan={this.state.slogan} profession={this.state.profession}/>
             </div>
         )
     }

@@ -35,8 +35,46 @@
   width: 460px;
   overflow: hidden;
   display: flex;
+  height: 80vh;
 }
 
 .mans__item {
-  transition: .4s;
+  transition: .7s ease-in-out;
+}
+
+.slogan {
+  position: absolute;
+  bottom: 40%;
+  left: -10%;
+  max-width: 550px;
+  border: 2px solid #00e5a8;
+  border-radius: 5px;
+  padding: 15px;
+  padding-left: 46px;
+  overflow: hidden;
+  &-blur {
+    filter: blur(40px);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 160%;
+    height: 160%;
+    background: rgba(0, 229, 168, 0.7);
+    z-index: -1;
+  }
+}
+
+.info {
+  position: absolute;
+  right: 0;
+  bottom: 23%;
+  text-align: right;
+  &-prof {
+    font-size: 13px;
+    line-height: 46px;
+  }
+  &-name {
+    font-size: 52px;
+    line-height: 44px;
+  }
 }
